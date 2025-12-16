@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
+    <title>Flight Fare Prediction | American Performance AI</title>
+    <!-- Chevy-Inspired CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>Flight Fare AI</h1>
+            <div class="subtitle">American Power · Precision Prediction</div>
+        </header>
+
+        <!-- Prediction Form -->
+        <form action="\predict" method="post">
+            <!-- Departure Time Input -->
+            <div class="form-group">
+                <label for="Dep_Time">Departure</label>
+                <input type="datetime-local" name="Dep_Time" id="Dep_Time" required>
+            </div>
+
+            <!-- Arrival Time Input -->
+            <div class="form-group">
+                <label for="Arrival_Time">Arrival</label>
+                <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required>
+            </div>
+
+            <!-- Source City Selection -->
+            <div class="form-group">
+                <label for="Source">Source City</label>
+                <select name="Source" id="Source" required>
+                    <option value="" disabled selected>Select Origin</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+            </div>
+
+            <!-- Destination City Selection -->
+            <div class="form-group">
+                <label for="Destination">Destination City</label>
+                <select name="Destination" id="Destination" required>
+                    <option value="" disabled selected>Select Destination</option>
+                    <option value="Cochin">Cochin</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="New_Delhi">New Delhi</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                </select>
+            </div>
+
+            <!-- Total Stops Selection -->
+            <div class="form-group">
+                <label for="stops">Stops</label>
+                <select name="stops" id="stops" required>
+                    <option value="0">Non-Stop</option>
+                    <option value="1">1 Stop</option>
+                    <option value="2">2 Stops</option>
+                    <option value="3">3 Stops</option>
+                    <option value="4">4 Stops</option>
+                </select>
+            </div>
+
+            <!-- Airline Selection -->
+            <div class="form-group">
+                <label for="airline">Airline</label>
+                <select name="airline" id="airline" required>
+                    <option value="" disabled selected>Choose Airline</option>
+                    <option value="Jet Airways">Jet Airways</option>
+                    <option value="IndiGo">IndiGo</option>
+                    <option value="Air India">Air India</option>
+                    <option value="Multiple carriers">Multiple carriers</option>
+                    <option value="SpiceJet">SpiceJet</option>
+                    <option value="Vistara">Vistara</option>
+                    <option value="GoAir">GoAir</option>
+                    <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                    <option value="Jet Airways Business">Jet Airways Business</option>
+                    <option value="Vistara Premium economy">Vistara Premium economy</option>
+                    <option value="Trujet">Trujet</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">Calculate Fare</button>
+        </form>
+
+        <!-- Prediction Result Display -->
+        {% if prediction_text %}
+        <div class="result-area">
+            <span class="result-text">Estimated Flight Fare</span>
+            <span class="result-price">Rs. {{ prediction_text.split('Rs. ')[1] }}</span>
+        </div>
+        {% endif %}
+
+    </div>
+</body>
+
+</html>

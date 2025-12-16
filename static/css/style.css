@@ -1,0 +1,221 @@
+/* 
+===========================================
+FLIGHT FARE PREDICTION - CHEVY USA THEME
+===========================================
+Bold, American automotive aesthetic
+Gold (#FFC72C) and Black (#000000)
+Strong typography and confident design
+===========================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700;900&display=swap');
+
+/* CSS Variables for Chevy Theme */
+:root {
+    --chevy-gold: #FFC72C;
+    --chevy-black: #000000;
+    --chevy-dark-gray: #1a1a1a;
+    --chevy-light-gray: #cccccc;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --shadow-strong: 0 8px 32px rgba(255, 199, 44, 0.3);
+}
+
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body - Bold Black Background */
+body {
+    background: var(--chevy-black);
+    background-image: url('/static/images/hero_background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* Header - Bold American Style */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Main Heading - Bold Bebas Neue Font */
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 400;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    color: var(--chevy-gold);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Subtitle */
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Form - Bold Black Card with Gold Accents */
+form {
+    background: var(--chevy-dark-gray);
+    padding: 50px;
+    border: 3px solid var(--chevy-gold);
+    box-shadow: var(--shadow-strong);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    position: relative;
+}
+
+/* Gold Top Border Accent */
+form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--chevy-gold);
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels - Bold Uppercase */
+label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--chevy-gold);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Input and Select - Bold Style */
+input,
+select {
+    background: var(--chevy-black);
+    border: 2px solid var(--chevy-light-gray);
+    color: var(--text-primary);
+    padding: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Focus State - Gold Border */
+input:focus,
+select:focus {
+    border-color: var(--chevy-gold);
+    box-shadow: 0 0 0 3px rgba(255, 199, 44, 0.2);
+}
+
+/* Custom Select Arrow - Gold */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23FFC72C'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 24px;
+}
+
+/* Submit Button - Bold Gold CTA */
+.btn-submit {
+    grid-column: span 2;
+    background: var(--chevy-gold);
+    color: var(--chevy-black);
+    border: none;
+    padding: 22px;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Button Hover - Lift Effect */
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 199, 44, 0.5);
+    background: #ffd04d;
+}
+
+/* Result Area - Gold Accent Box */
+.result-area {
+    margin-top: 40px;
+    text-align: center;
+    padding: 35px;
+    background: var(--chevy-dark-gray);
+    border: 3px solid var(--chevy-gold);
+    box-shadow: var(--shadow-strong);
+}
+
+/* Result Text */
+.result-text {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Result Price - Bold Gold */
+.result-price {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--chevy-gold);
+    letter-spacing: -2px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    form {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .btn-submit {
+        grid-column: span 1;
+    }
+
+    .result-price {
+        font-size: 3rem;
+    }
+}
